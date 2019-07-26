@@ -19,7 +19,7 @@
     <p>syncedName: {{syncedName}}</p>
     <h2>@Model(数据双向绑定)</h2>
     <p>
-      <input type="checkbox" :checked="checked" @change="change" />
+      <input type="checkbox" :checked="checked" @change="changeHandler" />
       {{ checked }}
     </p>
   </div>
@@ -97,8 +97,8 @@ export default class Hello extends Vue{
   })
   checked!: boolean;
 
-  @Emit("change")
-  change(e: MouseEvent) {
+  // change 
+  changeHandler(e: MouseEvent) {
     this.checked = !this.checked;
   }
 
